@@ -1,0 +1,67 @@
+{
+    "service": [
+        {
+            "serviceDetail": {
+                "folderId": "0000000000000000ffffffffffffec76",
+                "id": "868ca554e108a6e74c8680b45f50ee0e",
+                "name": "TestService",
+                "enabled": "true",
+                "serviceMappings": {
+                    "httpMapping": {
+                        "urlPattern": "\/baertl\/v1\/dosth\/*",
+                        "verbs": {
+                            "verb": [
+                                "GET",
+                                "POST",
+                                "PUT",
+                                "DELETE"
+                            ]
+                        }
+                    }
+                },
+                "properties": {
+                    "property": [
+                        {
+                            "key": "hasRouting",
+                            "booleanValue": "true"
+                        },
+                        {
+                            "key": "internal",
+                            "booleanValue": "false"
+                        },
+                        {
+                            "key": "policyRevision",
+                            "longValue": "4"
+                        },
+                        {
+                            "key": "soap",
+                            "booleanValue": "false"
+                        },
+                        {
+                            "key": "tracingEnabled",
+                            "booleanValue": "true"
+                        },
+                        {
+                            "key": "wssProcessingEnabled",
+                            "booleanValue": "false"
+                        }
+                    ]
+                }
+            },
+            "resources": {
+                "resourceSet": [
+                    {
+                        "tag": "policy",
+                        "resource": [
+                            {
+                                "type": "policy",
+                                "content": "TestService.xml"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "id": "868ca554e108a6e74c8680b45f50ee0e"
+        }
+    ]
+}

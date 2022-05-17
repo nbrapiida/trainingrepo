@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy">
+    <wsp:All wsp:Usage="Required">
+        <L7p:CommentAssertion>
+            <L7p:Comment stringValue="This webservice does exactly nothing!"/>
+        </L7p:CommentAssertion>
+        <L7p:AuditAssertion>
+            <L7p:SaveRequest booleanValue="true"/>
+            <L7p:SaveResponse booleanValue="true"/>
+        </L7p:AuditAssertion>
+        <L7p:AuditDetailAssertion>
+            <L7p:Detail stringValue="TestService was invoked."/>
+            <L7p:Level stringValue="WARNING"/>
+        </L7p:AuditDetailAssertion>
+        <L7p:CustomizeErrorResponse>
+            <L7p:Content stringValue="Please use SSL or TLS transport"/>
+            <L7p:ExtraHeaders nameValuePairArray="included"/>
+        </L7p:CustomizeErrorResponse>
+        <L7p:SslAssertion/>
+        <L7p:Include>
+            <L7p:PolicyGuid stringValue="de7e5f3f-c46b-4913-8cd8-327141ab2e37"/>
+        </L7p:Include>
+        <L7p:CustomizeErrorResponse>
+            <L7p:Content stringValue="No valid request. Validation failed"/>
+            <L7p:ExtraHeaders nameValuePairArray="included"/>
+        </L7p:CustomizeErrorResponse>
+        <L7p:JSONSchema>
+            <L7p:Enabled booleanValue="false"/>
+            <L7p:ResourceInfo staticResourceInfo="included">
+                <L7p:Document stringValueReference="inline"><![CDATA[{
+  "$schema": "http://json-schema.org/draft-02/schema#",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "key",
+    "value"
+  ]
+}]]></L7p:Document>
+            </L7p:ResourceInfo>
+        </L7p:JSONSchema>
+        <L7p:SchemaValidation>
+            <L7p:ResourceInfo globalResourceInfo="included">
+                <L7p:Id stringValue="schema1.xsd"/>
+            </L7p:ResourceInfo>
+            <L7p:Target target="REQUEST"/>
+        </L7p:SchemaValidation>
+        <L7p:CustomizeErrorResponse>
+            <L7p:Content stringValue="Error while invoking subroute"/>
+            <L7p:ExtraHeaders nameValuePairArray="included"/>
+        </L7p:CustomizeErrorResponse>
+        <L7p:HttpRoutingAssertion>
+            <L7p:AssertionComment assertionComment="included">
+                <L7p:Properties mapValue="included">
+                    <L7p:entry>
+                        <L7p:key stringValue="LEFT.COMMENT"/>
+                        <L7p:value stringValue="This is the left comment"/>
+                    </L7p:entry>
+                    <L7p:entry>
+                        <L7p:key stringValue="RIGHT.COMMENT"/>
+                        <L7p:value stringValue="And this is the right comment"/>
+                    </L7p:entry>
+                </L7p:Properties>
+            </L7p:AssertionComment>
+            <L7p:Enabled booleanValue="false"/>
+            <L7p:ProtectedServiceUrl stringValue="http://localhost:8080/baertl/v1/lab3a/"/>
+            <L7p:ProxyPassword stringValueNull="null"/>
+            <L7p:ProxyUsername stringValueNull="null"/>
+            <L7p:RequestHeaderRules httpPassthroughRuleSet="included">
+                <L7p:ForwardAll booleanValue="true"/>
+                <L7p:Rules httpPassthroughRules="included">
+                    <L7p:item httpPassthroughRule="included">
+                        <L7p:Name stringValue="Cookie"/>
+                    </L7p:item>
+                    <L7p:item httpPassthroughRule="included">
+                        <L7p:Name stringValue="SOAPAction"/>
+                    </L7p:item>
+                </L7p:Rules>
+            </L7p:RequestHeaderRules>
+            <L7p:RequestParamRules httpPassthroughRuleSet="included">
+                <L7p:ForwardAll booleanValue="true"/>
+                <L7p:Rules httpPassthroughRules="included"/>
+            </L7p:RequestParamRules>
+            <L7p:ResponseHeaderRules httpPassthroughRuleSet="included">
+                <L7p:ForwardAll booleanValue="true"/>
+                <L7p:Rules httpPassthroughRules="included">
+                    <L7p:item httpPassthroughRule="included">
+                        <L7p:Name stringValue="Set-Cookie"/>
+                    </L7p:item>
+                </L7p:Rules>
+            </L7p:ResponseHeaderRules>
+        </L7p:HttpRoutingAssertion>
+        <L7p:AuditDetailAssertion>
+            <L7p:Detail stringValue="TestService was invoked successfully."/>
+            <L7p:Level stringValue="WARNING"/>
+        </L7p:AuditDetailAssertion>
+        <L7p:HardcodedResponse>
+            <L7p:Base64ResponseBody stringValue="ewoiY29udGVudCI6ICJzdWNjZXNzZnVsIiwKImN3cCI6ICR7Z2F0ZXdheS5yb21hbi5yZXR1cm52YWx1ZX0KfQ=="/>
+            <L7p:ResponseContentType stringValue="application/json; charset=UTF-8"/>
+        </L7p:HardcodedResponse>
+    </wsp:All>
+</wsp:Policy>

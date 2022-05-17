@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy">
+    <wsp:All wsp:Usage="Required">
+        <wsp:All wsp:Usage="Required">
+            <L7p:CustomizeErrorResponse>
+                <L7p:Content stringValue="User is not authenticated"/>
+                <L7p:ExtraHeaders nameValuePairArray="included"/>
+            </L7p:CustomizeErrorResponse>
+            <L7p:HttpBasic/>
+            <L7p:Authentication>
+                <L7p:Enabled booleanValue="false"/>
+                <L7p:IdentityProviderOid goidValue="0000000000000000fffffffffffffffe"/>
+            </L7p:Authentication>
+            <L7p:SpecificUser>
+                <L7p:Enabled booleanValue="false"/>
+                <L7p:IdentityProviderOid goidValue="0000000000000000fffffffffffffffe"/>
+                <L7p:UserLogin stringValue="baertl"/>
+                <L7p:UserName stringValue="baertl"/>
+                <L7p:UserUid stringValue="1324bc8943a036dee38f62e0d42229c0"/>
+            </L7p:SpecificUser>
+            <L7p:MemberOfGroup>
+                <L7p:Enabled booleanValue="false"/>
+                <L7p:GroupId stringValue="1324bc8943a036dee38f62e0d4222a32"/>
+                <L7p:GroupName stringValue="baertlgroup"/>
+                <L7p:IdentityProviderOid goidValue="0000000000000000fffffffffffffffe"/>
+            </L7p:MemberOfGroup>
+            <L7p:SpecificUser>
+                <L7p:IdentityProviderOid goidValue="98fa79b8b5c8dbcfd5df73986f3ceebe"/>
+                <L7p:UserLogin stringValue="roman"/>
+                <L7p:UserName stringValue="roman"/>
+                <L7p:UserUid stringValue="cn=roman,ou=People,dc=learning-layers,dc=eu"/>
+            </L7p:SpecificUser>
+            <L7p:assertionComment>
+                <L7p:Properties mapValue="included">
+                    <L7p:entry>
+                        <L7p:key stringValue="RIGHT.COMMENT"/>
+                        <L7p:value stringValue="Authentication"/>
+                    </L7p:entry>
+                </L7p:Properties>
+            </L7p:assertionComment>
+        </wsp:All>
+    </wsp:All>
+</wsp:Policy>

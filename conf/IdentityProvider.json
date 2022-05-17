@@ -1,0 +1,295 @@
+{
+    "identityprovider": [
+        {
+            "name": "RomansLdapConnection",
+            "identityProviderType": "LDAP",
+            "properties": {
+                "property": [
+                    {
+                        "key": "adminEnabled",
+                        "booleanValue": "true"
+                    },
+                    {
+                        "key": "groupCacheMaximumAge",
+                        "longValue": "60000"
+                    },
+                    {
+                        "key": "groupCacheMaximumAgeUnit",
+                        "stringValue": {
+                            "value": "minutes"
+                        }
+                    },
+                    {
+                        "key": "groupCacheSize",
+                        "integerValue": "100"
+                    },
+                    {
+                        "key": "groupMaximumNesting",
+                        "integerValue": "5"
+                    },
+                    {
+                        "key": "groupMembershipCaseInsensitive",
+                        "booleanValue": "false"
+                    },
+                    {
+                        "key": "userCertificateUsage",
+                        "stringValue": {
+                            "value": "None"
+                        }
+                    },
+                    {
+                        "key": "userLookupByCertMode",
+                        "stringValue": {
+                            "value": "Common Name from Certificate"
+                        }
+                    }
+                ]
+            },
+            "extension": {
+                "ldapIdentityProviderDetail": {
+                    "sourceType": "GenericLDAP",
+                    "serverUrls": {
+                        "stringValue": "ldap:\/\/ip-172-31-35-225.eu-central-1.compute.internal:389"
+                    },
+                    "useSslClientAuthentication": "false",
+                    "searchBase": "dc=learning-layers,dc=eu",
+                    "bindDn": "cn=LayersManager,dc=learning-layers,dc=eu",
+                    "bindPassword": {
+                        "value": "$L7C2$1,nSTDGE0V4\/8UWmEuOm7H0Yfm+AA342J5v6fBNJmox1Q=$k5RLlnhF73PDQCAo91z1qnSXWArtcqPRaAXeW1ILeH8lmhmp\/DlIRf+dwr3YfSrVH646egk6xXgidq7iZZx2dQ==",
+                        "bundleKey": "$L7C2$1bead,WuIdAYXeFEL5RyDQUF9kkg3c4+iUDsPk\/\/\/ocrFtdno=$eaF1BkoqlZqELrbVlycmKMVAsI9k2NeBDcq2wXZNL9OpZ\/VHX9Xe2pnR1oYQPcbQqA0zMcFrim8LV6XetUB\/68k35y3QMac52ejkISOZjsTNfZhd2uEWOEY46oh9DsEK"
+                    },
+                    "writable": "false",
+                    "writeBase": "",
+                    "userMappings": {
+                        "mapping": [
+                            {
+                                "objectClass": "inetOrgPerson",
+                                "mappings": {
+                                    "property": [
+                                        {
+                                            "key": "emailNameAttrName",
+                                            "stringValue": {
+                                                "value": "mail"
+                                            }
+                                        },
+                                        {
+                                            "key": "firstNameAttrName",
+                                            "stringValue": {
+                                                "value": "givenName"
+                                            }
+                                        },
+                                        {
+                                            "key": "kerberosAttrName",
+                                            "stringValue": {
+                                                "value": "uid"
+                                            }
+                                        },
+                                        {
+                                            "key": "lastNameAttrName",
+                                            "stringValue": {
+                                                "value": "sn"
+                                            }
+                                        },
+                                        {
+                                            "key": "loginAttrName",
+                                            "stringValue": {
+                                                "value": "uid"
+                                            }
+                                        },
+                                        {
+                                            "key": "nameAttrName",
+                                            "stringValue": {
+                                                "value": "cn"
+                                            }
+                                        },
+                                        {
+                                            "key": "objClass",
+                                            "stringValue": {
+                                                "value": "inetOrgPerson"
+                                            }
+                                        },
+                                        {
+                                            "key": "passwdAttrName",
+                                            "stringValue": {
+                                                "value": "userPassword"
+                                            }
+                                        },
+                                        {
+                                            "key": "userCertAttrName",
+                                            "stringValue": {
+                                                "value": "userCertificate;binary"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "groupMappings": {
+                        "mapping": [
+                            {
+                                "objectClass": "posixGroup",
+                                "mappings": {
+                                    "property": [
+                                        {
+                                            "key": "memberAttrName",
+                                            "stringValue": {
+                                                "value": "memberUid"
+                                            }
+                                        },
+                                        {
+                                            "key": "nameAttrName",
+                                            "stringValue": {
+                                                "value": "cn"
+                                            }
+                                        },
+                                        {
+                                            "key": "objClass",
+                                            "stringValue": {
+                                                "value": "posixGroup"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "properties": {
+                                    "property": [
+                                        {
+                                            "key": "memberStrategy",
+                                            "stringValue": {
+                                                "value": "Member is User Login"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "objectClass": "groupOfUniqueNames",
+                                "mappings": {
+                                    "property": [
+                                        {
+                                            "key": "memberAttrName",
+                                            "stringValue": {
+                                                "value": "uniqueMember"
+                                            }
+                                        },
+                                        {
+                                            "key": "nameAttrName",
+                                            "stringValue": {
+                                                "value": "cn"
+                                            }
+                                        },
+                                        {
+                                            "key": "objClass",
+                                            "stringValue": {
+                                                "value": "groupOfUniqueNames"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "properties": {
+                                    "property": [
+                                        {
+                                            "key": "memberStrategy",
+                                            "stringValue": {
+                                                "value": "Member is NV Pair"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "objectClass": "organizationalUnit",
+                                "mappings": {
+                                    "property": [
+                                        {
+                                            "key": "memberAttrName",
+                                            "stringValue": {
+                                                "value": ""
+                                            }
+                                        },
+                                        {
+                                            "key": "nameAttrName",
+                                            "stringValue": {
+                                                "value": "ou"
+                                            }
+                                        },
+                                        {
+                                            "key": "objClass",
+                                            "stringValue": {
+                                                "value": "organizationalUnit"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "properties": {
+                                    "property": [
+                                        {
+                                            "key": "memberStrategy",
+                                            "stringValue": {
+                                                "value": "OU Group"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "specifiedAttributes": [],
+                    "ntlmProperties": {
+                        "property": [
+                            {
+                                "key": "domain.dns.name",
+                                "stringValue": {
+                                    "value": ""
+                                }
+                            },
+                            {
+                                "key": "domain.netbios.name",
+                                "stringValue": {
+                                    "value": ""
+                                }
+                            },
+                            {
+                                "key": "enabled",
+                                "stringValue": {
+                                    "value": "false"
+                                }
+                            },
+                            {
+                                "key": "host.dns.name",
+                                "stringValue": {
+                                    "value": ""
+                                }
+                            },
+                            {
+                                "key": "host.netbios.name",
+                                "stringValue": {
+                                    "value": ""
+                                }
+                            },
+                            {
+                                "key": "server.dns.name",
+                                "stringValue": {
+                                    "value": ""
+                                }
+                            },
+                            {
+                                "key": "service.account",
+                                "stringValue": {
+                                    "value": ""
+                                }
+                            },
+                            {
+                                "key": "service.passwordOid",
+                                "stringValue": {
+                                    "value": "c255cbc83a5e04f068eb90b2ab427aea"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "id": "98fa79b8b5c8dbcfd5df73986f3ceebe"
+        }
+    ]
+}

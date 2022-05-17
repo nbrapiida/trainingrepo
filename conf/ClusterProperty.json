@@ -1,0 +1,9 @@
+{
+    "clusterproperty": [
+        {
+            "name": "roman.returnvalue",
+            "value": "Inhalt der Cluster Wide Property",
+            "id": "98fa79b8b5c8dbcfd5df73986f3cfb61"
+        }
+    ]
+}

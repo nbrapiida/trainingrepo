@@ -1,0 +1,44 @@
+{
+    "policy": [
+        {
+            "guid": "de7e5f3f-c46b-4913-8cd8-327141ab2e37",
+            "policyDetail": {
+                "folderId": "c255cbc83a5e04f068eb90b2ab426943",
+                "guid": "de7e5f3f-c46b-4913-8cd8-327141ab2e37",
+                "id": "98fa79b8b5c8dbcfd5df73986f3d1216",
+                "name": "RomansPolicy",
+                "policyType": "Include",
+                "properties": {
+                    "property": [
+                        {
+                            "key": "hasRouting",
+                            "booleanValue": "false"
+                        },
+                        {
+                            "key": "revision",
+                            "longValue": "1"
+                        },
+                        {
+                            "key": "soap",
+                            "booleanValue": "false"
+                        }
+                    ]
+                }
+            },
+            "resources": {
+                "resourceSet": [
+                    {
+                        "tag": "policy",
+                        "resource": [
+                            {
+                                "type": "policy",
+                                "content": "RomansPolicy.xml"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "id": "98fa79b8b5c8dbcfd5df73986f3d1216"
+        }
+    ]
+}

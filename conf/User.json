@@ -1,0 +1,35 @@
+{
+    "user": [
+        {
+            "providerId": "0000000000000000fffffffffffffffe",
+            "login": "baertl",
+            "password": {
+                "bundleKey": "$L7C2$1bead,WuIdAYXeFEL5RyDQUF9kkg3c4+iUDsPk\/\/\/ocrFtdno=$eaF1BkoqlZqELrbVlycmKMVAsI9k2NeBDcq2wXZNL9OpZ\/VHX9Xe2pnR1oYQPcbQqA0zMcFrim8LV6XetUB\/68k35y3QMac52ejkISOZjsTNfZhd2uEWOEY46oh9DsEK",
+                "format": "bundleKey:sha512crypt",
+                "password": "$L7C2$1,KSKJWF8ouXs6QVuKa3bl\/IeI2fdTrh8YrigBmCpqXA4=$UjcvL2BBPA1r5\/2BWvE1r+hopYh8Q650cNfWw84PFBtYQQ8FTVWmgsmfFtVJff6FwXBD7sBHFGgeKbYk2lsoGd0h+f\/pAQBzG8xOPYS1vHonqSinQ155jzp4ugiIqw9iEyqAigeWW26z0ASNm7lCxDfzZXXYA4x+m5NEcb5zxktDA21IsXqV4szp+WZmANg+Uqn7\/CiHhTLQuEeNnigm8A=="
+            },
+            "firstName": "",
+            "lastName": "",
+            "email": "",
+            "properties": {
+                "property": [
+                    {
+                        "key": "accountExpiration",
+                        "longValue": "-1"
+                    },
+                    {
+                        "key": "enabled",
+                        "booleanValue": "true"
+                    },
+                    {
+                        "key": "name",
+                        "stringValue": {
+                            "value": "baertl"
+                        }
+                    }
+                ]
+            },
+            "id": "1324bc8943a036dee38f62e0d42229c0"
+        }
+    ]
+}
